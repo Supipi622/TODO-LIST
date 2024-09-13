@@ -2,7 +2,7 @@ import React from "react";
 import '../style/pageStyle/Home.css'
 import { useNavigate } from "react-router-dom";
 import TodoForm from "../components/TodoForm";
-import EditTask from "../components/EditTask";
+
 
 const Home = () => {
   const navigate = useNavigate();
