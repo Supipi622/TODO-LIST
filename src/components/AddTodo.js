@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../style/AddTaskForm.css';
 
-const AddTodo = ({ addTask }) => {
+const AddTodo = () => {
   const navigate = useNavigate();
+
   const [task, setTask] = useState({
     title: '',
     description: '',
@@ -21,8 +22,19 @@ const AddTodo = ({ addTask }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    addTask(task); // Call the passed-in addTask function to add the new task
-    navigate('/'); // Navigate back to the task list page
+
+    // Fetch existing tasks from localStorage
+    const storedTasks = JSON.parse(localStorage.getItem('tasks')) || [];
+
+    // Add the new task with a unique _id
+    const newTask = { ...task, _id: storedTasks.length ? storedTasks[storedTasks.length - 1]._id + 1 : 1 };
+    const updatedTasks = [...storedTasks, newTask];
+
+    // Update localStorage with the new task
+    localStorage.setItem('tasks', JSON.stringify(updatedTasks));
+
+    // Navigate back to the task list page
+    navigate('/');
   };
 
   return (

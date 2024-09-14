@@ -7,16 +7,11 @@ const TodoDetail = () => {
   const navigate = useNavigate();
   const [task, setTask] = useState(null);
 
+  // Fetch task details from localStorage
   useEffect(() => {
-    // Simulating task fetching based on taskId
-    const tasks = [
-      { _id: 1, title: "Task 1", description: "Description for Task 1", dueDate: "2024-09-20", completed: false },
-      { _id: 2, title: "Task 2", description: "Description for Task 2", dueDate: "2024-09-21", completed: true },
-      { _id: 3, title: "Task 3", description: "Description for Task 3", dueDate: "2024-09-22", completed: false }
-    ];
-
-    const task = tasks.find(t => t._id === parseInt(taskId));
-    setTask(task);
+    const storedTasks = JSON.parse(localStorage.getItem('tasks')) || [];
+    const taskToView = storedTasks.find(t => t._id === parseInt(taskId));
+    setTask(taskToView);
   }, [taskId]);
 
   if (!task) {

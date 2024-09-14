@@ -1,12 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import '../style/EdtTask.css';
 
 const EditTodo = () => {
   const { taskId } = useParams();
   const navigate = useNavigate();
-
-  // Local state to manage the task data
   const [task, setTask] = useState({
     title: '',
     description: '',
@@ -14,7 +12,15 @@ const EditTodo = () => {
     completed: false,
   });
 
-  // Handle changes to the form fields
+  // Load the task to be edited from localStorage
+  useEffect(() => {
+    const storedTasks = JSON.parse(localStorage.getItem('tasks')) || [];
+    const taskToEdit = storedTasks.find(t => t._id === parseInt(taskId));
+    if (taskToEdit) {
+      setTask(taskToEdit);
+    }
+  }, [taskId]);
+
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     setTask((prevTask) => ({
@@ -23,11 +29,22 @@ const EditTodo = () => {
     }));
   };
 
-  // Handle form submission (No backend required, so just navigate back)
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Perform any additional client-side updates or state management here
-    navigate('/'); // Navigate back to the home page after "saving"
+
+    // Fetch existing tasks
+    const storedTasks = JSON.parse(localStorage.getItem('tasks')) || [];
+
+    // Update the edited task
+    const updatedTasks = storedTasks.map((t) =>
+      t._id === parseInt(taskId) ? { ...task } : t
+    );
+
+    // Save updated tasks to localStorage
+    localStorage.setItem('tasks', JSON.stringify(updatedTasks));
+
+    // Navigate back to the task list page
+    navigate('/');
   };
 
   return (
@@ -57,7 +74,7 @@ const EditTodo = () => {
           <input
             type="date"
             name="dueDate"
-            value={task.dueDate.split('T')[0]} // Adjusting to display only the date part
+            value={task.dueDate.split('T')[0]}
             onChange={handleChange}
             required
           />
