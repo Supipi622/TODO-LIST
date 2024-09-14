@@ -1,15 +1,12 @@
 import React from "react";
 import '../style/pageStyle/Home.css'
 import { useNavigate } from "react-router-dom";
-import TodoForm from "../components/TodoForm";
+import TodoList from "../components/TodoList";
 
 
 const Home = () => {
   const navigate = useNavigate();
 
-  // const handleClick = () => {
-  //   navigate("/addtask");
-  // };
   return (
     <>
       <div className="home-container">
@@ -25,7 +22,7 @@ const Home = () => {
         <div className="another-background-image"></div>
       </div>
 
-      <TodoForm />
+      <TodoList />
      
     </>
   );
