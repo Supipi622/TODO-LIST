@@ -4,16 +4,16 @@ This project is a React-based Todo application that includes user authentication
 
 ## Project Structure
 
-Home Page: Displays the list of todos and allows users to add, edit, and delete tasks.
-Login Page: Allows users to log in with their credentials.
-Register Page: Allows users to register a new account.
+- Home Page: Displays the list of todos and allows users to add, edit, and delete tasks.
+- Login Page: Allows users to log in with their credentials.
+- Register Page: Allows users to register a new account.
 
 ## Features
 
-User registration and login.
-Task management (Add, Edit, View, and Delete todos).
-Tasks are stored in localStorage.
-React hooks for state management and navigation.
+- User registration and login.
+- Task management (Add, Edit, View, and Delete todos).
+- Tasks are stored in localStorage.
+- React hooks for state management and navigation.
 
 ## Technologies Used
 React.js
