@@ -68,6 +68,7 @@ const TodoList = () => {
                       toggleCompleted(task);
                     }}
                   />
+                  <span></span>
                 </label>
                 <span className={task.completed ? 'status-completed' : 'status-pending'}>
                   {task.completed ? 'Completed' : 'Pending'}
