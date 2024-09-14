@@ -16,11 +16,11 @@ This project is a React-based Todo application that includes user authentication
 - React hooks for state management and navigation.
 
 ## Technologies Used
-React.js
-React Router DOM
-LocalStorage (for storing tasks)
-CSS for basic styling
-ESLint for code quality
+- React.js
+- React Router DOM
+- LocalStorage (for storing tasks)
+- CSS for basic styling
+- ESLint for code quality
 
 Prerequisites
 Node.js (>= 14.x.x)
