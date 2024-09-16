@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import '../style/EdtTask.css';
+import '../style/EditTodo.css';
 
 const EditTodo = () => {
   const { taskId } = useParams();
@@ -49,9 +49,10 @@ const EditTodo = () => {
 
   return (
     <div className="edit-task-container">
-      <h1>Edit Task</h1>
-      <form onSubmit={handleSubmit}>
-        <div>
+      <h1>Edit Todo.....!!!!</h1>
+      <form onSubmit={handleSubmit} className="edit-form">
+
+        <div className="form-group">
           <label>Title</label>
           <input
             type="text"
@@ -61,7 +62,8 @@ const EditTodo = () => {
             required
           />
         </div>
-        <div>
+
+        <div className="form-group">
           <label>Description</label>
           <textarea
             name="description"
@@ -69,7 +71,8 @@ const EditTodo = () => {
             onChange={handleChange}
           />
         </div>
-        <div>
+
+        <div className="form-group">
           <label>Due Date</label>
           <input
             type="date"
@@ -79,6 +82,7 @@ const EditTodo = () => {
             required
           />
         </div>
+
         <div>
           <label>
             <input
@@ -90,7 +94,8 @@ const EditTodo = () => {
             Completed
           </label>
         </div>
-        <button type="submit">Update Task</button>
+
+        <button type="submit"  className="submit-button ">Update Task</button>
       </form>
     </div>
   );

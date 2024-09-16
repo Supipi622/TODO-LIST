@@ -19,9 +19,9 @@ const Register = () => {
 
   const handleRegister = async (values) => {
     try {
-      await register(values.email, values.password); // Register the user
-      login(values.email, values.password); // Automatically log the user in after signup
-      navigate("/todos"); // Redirect to Todo list after signup
+      await register(values.email, values.password); 
+      login(values.email, values.password); 
+      navigate("/todos"); 
     } catch (err) {
       setError("Registration failed. Please try again.");
     }

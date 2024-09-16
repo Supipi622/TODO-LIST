@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import '../style/taskDetails.css';
+import '../style/TodoDetails.css';
 
 const TodoDetail = () => {
   const { taskId } = useParams();
@@ -20,7 +20,7 @@ const TodoDetail = () => {
 
   return (
     <div className="task-details-container">
-      <h1>Task Details</h1>
+      <h1>Todo Details...!!!!</h1>
       <div>
         <strong>Title:</strong> {task.title}
       </div>
@@ -31,7 +31,7 @@ const TodoDetail = () => {
         <strong>Due Date:</strong> {task.dueDate}
       </div>
       <div>
-        <strong>Status:</strong> {task.completed ? 'Completed' : 'Pending'}
+        <strong>Status:</strong> {task.completed ? 'Completed' : 'incomplete'}
       </div>
       <button onClick={() => navigate(`/edit/${taskId}`)}>Edit</button>
       <button onClick={() => navigate('/')}>Back to Task List</button>

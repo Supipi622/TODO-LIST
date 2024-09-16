@@ -28,32 +28,49 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
 }
 
 .image {
     flex: 1;
-    background-image: url('./image1.png');
     background-size: cover;
     background-position: center;
     height: 400px;
 }
 
 .another-background-image {
-    background-image: url('./image.png');
     background-size: cover;
     background-position: right;
-    height: auto;
-  }
-  
-
-.footer {
-    background-color: #f0f0f0;
-    text-align: center;
-    padding: 20px 0;
+    height: 400px;
 }
 
-.footer svg {
-    width: 100%;
-    height: auto;
-} 
- 
+/* Responsive Design */
+@media (max-width: 768px) {
+    .home-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .content {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .image, .another-background-image {
+        width: 100%;
+        height: 300px;
+    }
+
+    .content h1 {
+        font-size: 1.8em;
+    }
+
+    .content p {
+        font-size: 1em;
+    }
+}

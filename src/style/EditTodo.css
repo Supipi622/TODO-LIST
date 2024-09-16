@@ -1,0 +1,125 @@
+
+  .edit-form{
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: 30px ;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%; 
+    box-sizing: border-box;
+
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+  }
+
+  .edit-task-container {
+    display: flex;
+  justify-content: center; 
+  padding: 50px;
+   }
+  
+
+  .form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+
+.edit-task-container input[type="text"],
+.edit-task-container textarea ,
+.edit-task-container input[type="date"]{
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  }
+  
+  .edit-task-container textarea {
+    height: 100px;
+    resize: vertical; /* Allows vertical resizing only */
+  }
+
+  .checkbox-group label {
+    display: flex;
+    align-items: center;
+  }
+  
+  .edit-task-container input[type="checkbox"] {
+    margin-right: 10px;
+  }
+
+  .edit-task-container h1 {
+    margin-bottom: 20px;
+    color: #0a0a0a;
+    
+  }
+  
+  
+  .edit-task-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 400px; /* Limit the width of the form */
+    background: #ffffff; /* White background for the form */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .edit-task-container div {
+    width: 100%;
+    margin: 10px 0;
+  }
+  
+  .edit-task-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333333;
+  }
+  
+  
+  
+  .edit-task-container button {
+    background-color: #3bb19b; /* Green button */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease; /* Smooth transition */
+
+
+  }
+
+  .edit-task-container button:hover {
+    background-color: #45a049; 
+    
+  }
+  
+  /* Responsive Design */
+@media (max-width: 768px) {
+  .task-form {
+      width: 100%;
+      padding: 15px;
+  }
+  .submit-button {
+    width: 100%; 
+    padding: 12px;
+}
+
+
+}

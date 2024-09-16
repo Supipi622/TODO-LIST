@@ -9,7 +9,7 @@ const Navbar = () => {
       {/* Logo */}
       <div className="logo">
         <span>TODO</span>
-        <span className="vine">APP</span>
+        <span className="vine">LIST</span>
       </div>
 
       {/* Navigation links */}
@@ -18,11 +18,6 @@ const Navbar = () => {
       <li><NavLink to="/login">Login</NavLink></li>
       <li><NavLink to ='/register'>Signup</NavLink></li>
       
-
-
-        {/* <li><a href="/">Home</a></li>
-        <li><a href="/login">Login</a></li>
-        <li><a href="/register">Register</a></li> */}
       </ul>
     </nav>
   );

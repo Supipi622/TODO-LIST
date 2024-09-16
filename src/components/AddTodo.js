@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../style/AddTaskForm.css';
+import '../style/AddTodo.css';
 
 const AddTodo = () => {
   const navigate = useNavigate();
@@ -38,7 +38,10 @@ const AddTodo = () => {
   };
 
   return (
+    <div className="add-todo-container">
+    <h1>Add Todo.....!!!!</h1>
     <form onSubmit={handleSubmit} className="task-form">
+
       <div className="form-group">
         <label>Title</label>
         <input
@@ -49,14 +52,16 @@ const AddTodo = () => {
           required
         />
       </div>
+
       <div className="form-group">
         <label>Description</label>
         <textarea
           name="description"
           value={task.description}
           onChange={handleChange}
-        ></textarea>
+        />
       </div>
+
       <div className="form-group">
         <label>Due Date</label>
         <input
@@ -67,6 +72,7 @@ const AddTodo = () => {
           required
         />
       </div>
+
       <div className="form-group checkbox-group">
         <label>
           Completed
@@ -76,10 +82,13 @@ const AddTodo = () => {
             checked={task.completed}
             onChange={handleChange}
           />
+    
         </label>
       </div>
+      
       <button type="submit" className="submit-button">Save</button>
     </form>
+    </div>
   );
 };
 

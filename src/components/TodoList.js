@@ -9,9 +9,11 @@ const TodoList = () => {
   
   // Sample tasks to replace backend data
   const [tasks, setTasks] = useState([
+
     { _id: 1, title: "Task 1", dueDate: "2024-09-20", completed: false },
     { _id: 2, title: "Task 2", dueDate: "2024-09-21", completed: true },
     { _id: 3, title: "Task 3", dueDate: "2024-09-22", completed: false }
+    
   ]);
 
   const handleDelete = (taskId) => {
@@ -70,8 +72,8 @@ const TodoList = () => {
                   />
                   <span></span>
                 </label>
-                <span className={task.completed ? 'status-completed' : 'status-pending'}>
-                  {task.completed ? 'Completed' : 'Pending'}
+                <span className={task.completed ? 'status-completed' : 'status-incomplete'}>
+                  {task.completed ? 'Completed' : 'incomplete '}
                 </span>
               </div>
               <div className="task-actions">
